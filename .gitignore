@@ -3,3 +3,7 @@
 /workspace.xml
 /.idea/
 *.xml
+*.xml
+*.xml
+.idea/vcs.xml
+.idea/workspace.xml
