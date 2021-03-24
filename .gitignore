@@ -99,3 +99,4 @@ build/
 ### VS Code ###
 .vscode/
 
+backend/bazaDanych1.mv.db
