@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { render } from '@testing-library/react';
+import React, {Component} from 'react';
+import Team from "./Team"
+class App extends Component{
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  state = 
+  {
+    data: [],
+  }
+
+  componentDidMount(){
+    fetch('http://localhost:8080/api/bpl/all')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      this.setState({data})
+    }
+    );
+  }
+
+  render(){
+    return (
+      <div>
+        {this.state.data.map(team => <Team info={team}/> )}
+      </div>
+    );
+  }
+
+
 }
-
 export default App;

@@ -8,6 +8,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/bpl")
+@CrossOrigin
 public class FootballTeamBPLApi {
 
     private List<FootballTeamBPL> footballTeamBPLS;
