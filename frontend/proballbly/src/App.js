@@ -1,6 +1,10 @@
 import { render } from '@testing-library/react';
 import React, {Component} from 'react';
 import Team from "./Team"
+import Header from "./components/Header"
+import Nav from "./components/Navigation"
+import "./App.css"
+
 class App extends Component{
 
   state = 
@@ -20,8 +24,10 @@ class App extends Component{
 
   render(){
     return (
-      <div>
-        {this.state.data.map(team => <Team info={team}/> )}
+      <div class="base-container">
+        <Header/>
+        {/* </div>{this.state.data.map(team => <Team info={team}/> )} */}
+        <Nav />
       </div>
     );
   }
