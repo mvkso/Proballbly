@@ -15,6 +15,7 @@ public class ProballblyAppApplication {
 
 		SpringApplication.run(ProballblyAppApplication.class, args);
 
+
 	}
 
 }

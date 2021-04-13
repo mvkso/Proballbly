@@ -100,3 +100,4 @@ build/
 .vscode/
 
 backend/bazaDanych1.mv.db
+backend/src/main/resources/application.properties
