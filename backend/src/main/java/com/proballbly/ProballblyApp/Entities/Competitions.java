@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Competition {
+public class Competitions {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +18,7 @@ public class Competition {
     private int currentMatchDay;
     private int seasonsId;
 
-    public Competition(int id, String name, int currentSeasonId, int currentMatchDay, int seasonsId) {
+    public Competitions(int id, String name, int currentSeasonId, int currentMatchDay, int seasonsId) {
         this.id = id;
         this.name = name;
         this.currentSeasonId = currentSeasonId;
@@ -26,7 +26,7 @@ public class Competition {
         this.seasonsId = seasonsId;
     }
 
-    public Competition() {
+    public Competitions() {
     }
 
     public int getId() {
