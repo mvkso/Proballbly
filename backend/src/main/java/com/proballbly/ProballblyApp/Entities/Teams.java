@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class BPLTeams {
+public class Teams {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,13 +15,16 @@ public class BPLTeams {
     private String name;
     private String shortName;
 
-    public BPLTeams(int id, String name, String shortName) {
+    public Teams(int id, String name, String shortName) {
         this.id = id;
         this.name = name;
         this.shortName = shortName;
     }
 
-    public BPLTeams() {
+    public Teams(TeamsBuilder builder) {
+        this.id=builder.id;
+        this.name=builder.name;
+        this.shortName=builder.shortName;
     }
 
     public int getId() {
@@ -55,5 +58,34 @@ public class BPLTeams {
                 ", name='" + name + '\'' +
                 ", shortName='" + shortName + '\'' +
                 '}';
+    }
+
+    public static TeamsBuilder builder() {
+        return new TeamsBuilder();
+    }
+
+    public static class TeamsBuilder{
+        private int id;
+        private String name;
+        private String shortName;
+
+        public TeamsBuilder id(int id) {
+            this.id = id;
+            return this;
+        }
+
+        public TeamsBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public TeamsBuilder shortName(String shortName) {
+            this.shortName = shortName;
+            return this;
+        }
+
+        public Teams build() {
+            return new Teams(this);
+        }
     }
 }
