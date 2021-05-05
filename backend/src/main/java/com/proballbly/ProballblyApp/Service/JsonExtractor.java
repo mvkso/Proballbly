@@ -1,4 +1,4 @@
-package Service;
+package com.proballbly.ProballblyApp.Service;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

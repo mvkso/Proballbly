@@ -1,4 +1,4 @@
-package Service;
+package com.proballbly.ProballblyApp.Service;
 
 import org.springframework.stereotype.Service;
 import org.apache.commons.lang3.StringUtils;

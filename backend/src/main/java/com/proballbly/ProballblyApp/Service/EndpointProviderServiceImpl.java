@@ -1,5 +1,8 @@
-package Service;
+package com.proballbly.ProballblyApp.Service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class EndpointProviderServiceImpl implements EndpointProviderService{
 
     private static final String BASE_URL = "http://api.football-data.org/v2/";

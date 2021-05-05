@@ -1,4 +1,4 @@
-package com.proballbly.ProballblyApp;
+package com.proballbly.ProballblyApp.Controllers;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

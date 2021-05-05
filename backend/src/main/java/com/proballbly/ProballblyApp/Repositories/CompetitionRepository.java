@@ -1,4 +1,4 @@
-package Repositories;
+package com.proballbly.ProballblyApp.Repositories;
 
 import com.proballbly.ProballblyApp.Entities.Competitions;
 import org.springframework.data.repository.CrudRepository;

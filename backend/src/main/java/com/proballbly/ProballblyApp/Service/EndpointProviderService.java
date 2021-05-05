@@ -1,4 +1,4 @@
-package Service;
+package com.proballbly.ProballblyApp.Service;
 
 public interface EndpointProviderService {
     String getBase();

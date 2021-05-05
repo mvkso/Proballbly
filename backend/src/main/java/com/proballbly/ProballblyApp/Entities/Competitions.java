@@ -9,6 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class Competitions {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

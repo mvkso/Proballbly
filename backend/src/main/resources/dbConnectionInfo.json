@@ -1,0 +1,5 @@
+{
+  "url" : "jdbc:postgresql://ec2-54-78-36-245.eu-west-1.compute.amazonaws.com:5432/d3puo4ebvsajk2",
+  "user" :"canovuxfzcvwtn",
+  "password" : "e7ec01b09e7abaa82eb5217431013c8fd98a3d422bb61b648c4bc5822cdab58d"
+}
