@@ -15,10 +15,8 @@ public class Teams {
     private String name;
     private String shortName;
 
-    public Teams(int id, String name, String shortName) {
-        this.id = id;
-        this.name = name;
-        this.shortName = shortName;
+    public Teams() {
+
     }
 
     public Teams(TeamsBuilder builder) {

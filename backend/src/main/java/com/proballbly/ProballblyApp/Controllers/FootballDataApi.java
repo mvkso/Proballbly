@@ -24,19 +24,6 @@ public class FootballDataApi {
     public FootballDataServiceImpl footballDataService;
     public BPLTeamsRepository repository;
 
-    public FootballDataApi() {
-        teamsList = new ArrayList<>();
-        Teams teamX = new Teams(10000,"Wisla Krakow", "ABG");
-        teamsList.add(teamX);
-
-
-    }
-
-
-    @GetMapping("/all")
-    public Iterable<Teams> getAll() {
-        return teamsList;
-    }
 
 //    @GetMapping
 //    public FootballTeamBPL getById(@RequestParam int index) {

@@ -1,10 +1,10 @@
 package com.proballbly.ProballblyApp.Entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.awt.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class Competitions {
@@ -15,69 +15,62 @@ public class Competitions {
     private int id;
 
     private String name;
-    private int currentSeasonId;
-    private int currentMatchDay;
-    private int seasonsId;
 
-    public Competitions(int id, String name, int currentSeasonId, int currentMatchDay, int seasonsId) {
-        this.id = id;
-        this.name = name;
-        this.currentSeasonId = currentSeasonId;
-        this.currentMatchDay = currentMatchDay;
-        this.seasonsId = seasonsId;
+    @OneToOne(mappedBy = "competitions")
+    private Season currentSeason;
+
+    private LocalDateTime lastUpdated;
+    
+
+    public Competitions(CompetitionsBuilder builder) {
+        this.id=builder.id;
+        this.name = builder.name;
+        this.currentSeason=builder.currentSeason;
+        this.lastUpdated = builder.lastUpdated;
+
     }
 
     public Competitions() {
     }
 
-    public int getId() {
-        return id;
+
+    public static CompetitionsBuilder builder() {
+        return new CompetitionsBuilder();
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public static class CompetitionsBuilder{
 
-    public String getName() {
-        return name;
-    }
+        private int id;
+        private String name;
+        private Season currentSeason;
+        private LocalDateTime lastUpdated;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public CompetitionsBuilder id(int id){
+            this.id = id;
+            return this;
+        }
+        public CompetitionsBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
 
-    public int getCurrentSeasonId() {
-        return currentSeasonId;
-    }
+        public CompetitionsBuilder currentSeason(Season currentSeason) {
+            this.currentSeason = currentSeason;
+            return this;
+        }
 
-    public void setCurrentSeasonId(int currentSeasonId) {
-        this.currentSeasonId = currentSeasonId;
-    }
+        public CompetitionsBuilder lastUpdated(LocalDateTime lastUpdated) {
+            this.lastUpdated = lastUpdated;
+            return this;
+        }
+        public Competitions build() {
+            return new Competitions(this);
+        }
 
-    public int getCurrentMatchDay() {
-        return currentMatchDay;
-    }
 
-    public void setCurrentMatchDay(int currentMatchDay) {
-        this.currentMatchDay = currentMatchDay;
-    }
-
-    public int getSeasonsId() {
-        return seasonsId;
-    }
-
-    public void setSeasonsId(int seasonsId) {
-        this.seasonsId = seasonsId;
-    }
-
-    @Override
-    public String toString() {
-        return "Competition{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", currentSeasonId=" + currentSeasonId +
-                ", currentMatchDay=" + currentMatchDay +
-                ", seasonsId=" + seasonsId +
-                '}';
     }
 }
+
+
+
+
