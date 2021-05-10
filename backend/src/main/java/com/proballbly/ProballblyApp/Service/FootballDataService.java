@@ -1,18 +1,16 @@
 package com.proballbly.ProballblyApp.Service;
 
-import com.proballbly.ProballblyApp.Entities.Competitions;
+import com.proballbly.ProballblyApp.Entities.Competition;
 import com.proballbly.ProballblyApp.Entities.Teams;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
 public interface FootballDataService {
 
-    List <Competitions> competitions();
+    List <Competition> competitions();
 
-    Competitions competition(int id);
+    Competition competition(int id);
 
     String standings(int id);
 

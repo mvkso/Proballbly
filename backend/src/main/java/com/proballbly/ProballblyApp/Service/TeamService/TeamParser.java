@@ -1,20 +1,15 @@
 package com.proballbly.ProballblyApp.Service.TeamService;
 
-import com.proballbly.ProballblyApp.Repositories.BPLTeamsRepository;
 import com.proballbly.ProballblyApp.Service.JsonExtractor;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.proballbly.ProballblyApp.Entities.Teams;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class TeamParser {
 
     private final JsonParser parser = new JsonParser();
     private final JsonExtractor extractor = new JsonExtractor();
-
-    @Autowired
-    private BPLTeamsRepository repository;
 
     public Teams toTeam(String jsonString) {
         JsonElement element = parser.parse(jsonString);
@@ -27,9 +22,6 @@ public class TeamParser {
                 .name(parseName(json))
                 .shortName(parseShortName(json))
                 .build();
-//        System.out.println("Działa");
-//            repository.save(x);
-//        System.out.println("Nie dziala");
             return x;
 
 

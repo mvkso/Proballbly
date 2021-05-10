@@ -1,12 +1,35 @@
 package com.proballbly.ProballblyApp.Service.CompetitionService;
 
-import com.proballbly.ProballblyApp.Entities.Competitions;
+import com.proballbly.ProballblyApp.Entities.Competition;
+import com.proballbly.ProballblyApp.Service.EndpointProviderService;
+import com.proballbly.ProballblyApp.Service.RestClientService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface CompetitionService {
+@Service
+public class CompetitionService {
 
-    List<Competitions> load();
+    @Autowired
+    private CompetitionsParserService parser;
 
-    Competitions load(int id);
+    @Autowired
+    private EndpointProviderService endpointProviderService;
+
+    @Autowired
+    private RestClientService restClientService;
+
+
+    public List<Competition> load() {
+
+        String s = restClientService.get(endpointProviderService.getCompetitions());
+        return parser.toCompetitions(s);
+    }
+
+    public Competition load(int id) {
+        String endpoint = endpointProviderService.getCompetition(id);
+        String s = restClientService.get(endpoint);
+        return parser.toCompetition(s);
+    }
 }

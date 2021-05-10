@@ -1,7 +1,9 @@
 package com.proballbly.ProballblyApp.Service;
 
-import com.proballbly.ProballblyApp.Entities.Competitions;
+import com.proballbly.ProballblyApp.Entities.Competition;
 import com.proballbly.ProballblyApp.Entities.Teams;
+import com.proballbly.ProballblyApp.Service.CompetitionService.CompetitionService;
+import com.proballbly.ProballblyApp.Service.StandingService.StandingService;
 import com.proballbly.ProballblyApp.Service.TeamService.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,22 +15,28 @@ public class FootballDataServiceImpl implements FootballDataService {
 
 
     @Autowired
+    private CompetitionService competitionService;
+
+    @Autowired
+    private StandingService standingService;
+
+    @Autowired
     private TeamService teamService;
 
 
     @Override
-    public List<Competitions> competitions() {
-        return null;
+    public List<Competition> competitions() {
+        return competitionService.load();
     }
 
     @Override
-    public Competitions competition(int id) {
-        return null;
+    public Competition competition(int id) {
+        return competitionService.load(id);
     }
 
     @Override
     public String standings(int id) {
-        return null;
+        return standingService.load(id);
     }
 
     @Override

@@ -2,13 +2,11 @@ package com.proballbly.ProballblyApp.Service.TeamService;
 
 
 import com.proballbly.ProballblyApp.Entities.Teams;
-import com.proballbly.ProballblyApp.Repositories.BPLTeamsRepository;
 import com.proballbly.ProballblyApp.Service.EndpointProviderService;
 import com.proballbly.ProballblyApp.Service.RestClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,8 +20,7 @@ public class TeamService {
     @Autowired
     private EndpointProviderService endpointProviderService;
 
-    @Autowired
-    private BPLTeamsRepository repository;//
+
 
     public List<Teams> load(){
         String endpoint = endpointProviderService.getTeams();

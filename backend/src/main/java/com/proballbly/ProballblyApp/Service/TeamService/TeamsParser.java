@@ -5,9 +5,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.proballbly.ProballblyApp.Entities.Teams;
-import com.proballbly.ProballblyApp.Repositories.BPLTeamsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +18,6 @@ public class TeamsParser {
     private final JsonParser jsonParser = new JsonParser();
     private final TeamParser teamParser = new TeamParser();
 
-    @Autowired
-    private BPLTeamsRepository repository;
 
 
     public List <Teams> toTeams(String jsonString) {

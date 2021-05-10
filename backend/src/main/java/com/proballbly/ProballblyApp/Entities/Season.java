@@ -3,19 +3,12 @@ package com.proballbly.ProballblyApp.Entities;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
+//@Entity
 public class Season {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private int currentMatchDay;
-
-    @OneToOne
-    Competitions competitions;
+    private final int id;
+    private final LocalDate startDate;
+    private final LocalDate endDate;
+    private final int currentMatchDay;
 
     private Season(SeasonBuilder seasonBuilder) {
         this.id = seasonBuilder.id;
@@ -24,14 +17,25 @@ public class Season {
         this.currentMatchDay = seasonBuilder.currentMatchDay;
     }
 
-    public Season() {
+    public int getId() {
+        return id;
     }
 
-    public static SeasonBuilder builder(){
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public int getCurrentMatchDay() {
+        return currentMatchDay;
+    }
+
+    public static SeasonBuilder builder() {
         return new SeasonBuilder();
     }
-
-
 
     public static class SeasonBuilder {
         private int id;
@@ -62,46 +66,5 @@ public class Season {
         public Season build() {
             return new Season(this);
         }
-    }
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    public int getCurrentMatchDay() {
-        return currentMatchDay;
-    }
-
-    public void setCurrentMatchDay(int currentMatchDay) {
-        this.currentMatchDay = currentMatchDay;
-    }
-
-    public Competitions getCompetitions() {
-        return competitions;
-    }
-
-    public void setCompetitions(Competitions competitions) {
-        this.competitions = competitions;
     }
 }
