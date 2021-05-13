@@ -4,7 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.proballbly.ProballblyApp.Entities.Competition;
+import com.proballbly.ProballblyApp.Models.Competition;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,10 +20,10 @@ public class CompetitionsParserService {
     public List<Competition> toCompetitions(String jsonString) {
         JsonElement element = jsonParser.parse(jsonString);
         JsonElement competitionsJson = ((JsonObject) element).get("competitions");
-
-        if (competitionsJson.isJsonArray())
-
+        System.out.println(competitionsJson);
+        if (competitionsJson.isJsonArray()) {
             return toCompetitions(competitionsJson.getAsJsonArray());
+        }
         return toCompetitions(competitionsJson.getAsJsonObject());
     }
 
@@ -34,8 +34,14 @@ public class CompetitionsParserService {
 
     private List<Competition> toCompetitions(JsonArray array) {
         List<Competition> competitions = new ArrayList<>();
-        System.out.println("KURWA DZIALA?");
-        array.forEach(item -> competitions.add(toCompetition(item.getAsJsonObject())));
+        int i = 0;
+        for(JsonElement element : array){
+            JsonObject temp = element.getAsJsonObject();
+            if(i!=37){
+                competitions.add(toCompetition(temp));
+            }
+            i++;
+        }
         return competitions;
     }
 

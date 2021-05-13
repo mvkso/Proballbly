@@ -1,4 +1,4 @@
-package com.proballbly.ProballblyApp.Entities;
+package com.proballbly.ProballblyApp.Models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

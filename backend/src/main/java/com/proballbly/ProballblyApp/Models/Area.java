@@ -1,4 +1,4 @@
-package com.proballbly.ProballblyApp.Entities;
+package com.proballbly.ProballblyApp.Models;
 
 public class Area {
     private int id;

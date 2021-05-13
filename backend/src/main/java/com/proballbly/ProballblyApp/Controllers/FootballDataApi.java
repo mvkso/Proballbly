@@ -1,8 +1,9 @@
 package com.proballbly.ProballblyApp.Controllers;
 
-import com.proballbly.ProballblyApp.Entities.Competition;
-import com.proballbly.ProballblyApp.Entities.Teams;
+import com.proballbly.ProballblyApp.Models.Competition;
+import com.proballbly.ProballblyApp.Models.Teams;
 import com.proballbly.ProballblyApp.Service.FootballDataServiceImpl;
+import com.proballbly.ProballblyApp.Service.StandingService.StandingParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,9 @@ public class FootballDataApi {
     @Autowired
     public FootballDataServiceImpl footballDataService;
 
+    @Autowired
+    public StandingParser parser;
+
     @GetMapping("/competitions")
     public List<Competition> competitions() {
         return footballDataService.competitions();
@@ -30,7 +34,8 @@ public class FootballDataApi {
 
     @GetMapping("/competitions/{id}/standings")
     public String standings(@PathVariable String id) {
-        return footballDataService.standings(Integer.parseInt(id));
+        String standing = footballDataService.standings(Integer.parseInt(id));
+        return parser.toStanding(standing);
     }
 
     @GetMapping("/teams")

@@ -1,7 +1,6 @@
-package com.proballbly.ProballblyApp.Entities;
+package com.proballbly.ProballblyApp.Models;
 
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
