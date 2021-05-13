@@ -1,7 +1,7 @@
 package com.proballbly.ProballblyApp.Service.TeamService;
 
 
-import com.proballbly.ProballblyApp.Entities.Teams;
+import com.proballbly.ProballblyApp.Models.Teams;
 import com.proballbly.ProballblyApp.Service.EndpointProviderService;
 import com.proballbly.ProballblyApp.Service.RestClientService;
 import org.springframework.beans.factory.annotation.Autowired;

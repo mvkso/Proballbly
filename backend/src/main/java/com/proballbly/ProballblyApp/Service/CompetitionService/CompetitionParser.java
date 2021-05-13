@@ -3,9 +3,9 @@ package com.proballbly.ProballblyApp.Service.CompetitionService;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.proballbly.ProballblyApp.Entities.Area;
-import com.proballbly.ProballblyApp.Entities.Competition;
-import com.proballbly.ProballblyApp.Entities.Season;
+import com.proballbly.ProballblyApp.Models.Area;
+import com.proballbly.ProballblyApp.Models.Competition;
+import com.proballbly.ProballblyApp.Models.Season;
 import com.proballbly.ProballblyApp.Service.JsonExtractor;
 
 import java.time.LocalDate;

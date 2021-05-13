@@ -1,7 +1,7 @@
 package com.proballbly.ProballblyApp.Service;
 
-import com.proballbly.ProballblyApp.Entities.Competition;
-import com.proballbly.ProballblyApp.Entities.Teams;
+import com.proballbly.ProballblyApp.Models.Competition;
+import com.proballbly.ProballblyApp.Models.Teams;
 import com.proballbly.ProballblyApp.Service.CompetitionService.CompetitionService;
 import com.proballbly.ProballblyApp.Service.StandingService.StandingService;
 import com.proballbly.ProballblyApp.Service.TeamService.TeamService;

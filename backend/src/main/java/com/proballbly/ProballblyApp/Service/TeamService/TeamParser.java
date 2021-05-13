@@ -4,7 +4,7 @@ import com.proballbly.ProballblyApp.Service.JsonExtractor;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.proballbly.ProballblyApp.Entities.Teams;
+import com.proballbly.ProballblyApp.Models.Teams;
 
 public class TeamParser {
 

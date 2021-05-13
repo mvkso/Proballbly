@@ -1,6 +1,6 @@
 package com.proballbly.ProballblyApp.Service.CompetitionService;
 
-import com.proballbly.ProballblyApp.Entities.Competition;
+import com.proballbly.ProballblyApp.Models.Competition;
 import com.proballbly.ProballblyApp.Service.EndpointProviderService;
 import com.proballbly.ProballblyApp.Service.RestClientService;
 import org.springframework.beans.factory.annotation.Autowired;

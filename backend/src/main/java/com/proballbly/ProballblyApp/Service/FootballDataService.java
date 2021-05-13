@@ -1,7 +1,7 @@
 package com.proballbly.ProballblyApp.Service;
 
-import com.proballbly.ProballblyApp.Entities.Competition;
-import com.proballbly.ProballblyApp.Entities.Teams;
+import com.proballbly.ProballblyApp.Models.Competition;
+import com.proballbly.ProballblyApp.Models.Teams;
 
 import java.util.List;
 
