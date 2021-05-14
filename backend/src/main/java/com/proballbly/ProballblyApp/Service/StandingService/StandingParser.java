@@ -14,6 +14,7 @@ public class StandingParser {
     public String toStanding (String jsonString){
         JsonElement element = jsonParser.parse(jsonString);
         JsonElement standingsJson = ((JsonObject) element).get("standings");
+
         return standingsJson.toString();
     }
 }
