@@ -5,7 +5,9 @@ import logo from '../logo_black.png';
 
 const Header = () => (
       <header className="header">Proballbly
-            <img src={logo} className="logo" alt="logo" />
+           <div className="icons">
+                 <img src="/account.png" alt="account icon" />
+           </div>
       </header>
     );
 

@@ -1,16 +1,21 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "./Navigation.css"
 
-export default class Nav extends React.Component {
+const Nav = () => {
+  return (
+      <nav className="navbar">
+          <div className="links">
+              <Link to="/" style={{marginLeft: "0px"}}>Strona główna</Link>
+              <Link to="/bpl">Premier League</Link>
+              <Link to="laliga">La Liga</Link>
+              <Link to="bundesliga">Bundesliga</Link>
+              <Link to="ligue1" style={{marginRight: "0px"}}>Ligue 1</Link>
+          </div>
+      </nav>
+  )
 
-  render() {
-    return (
-      <div className="league-bar">
-            <button className="main-button">Premier League</button>
-            <button className="main-button">La Liga</button>
-            <button className="main-button">Ekstraklasa</button>
-            <button className="main-button">LM</button>
-      </div>
-    );
-  }
 }
+
+export default Nav;
+
