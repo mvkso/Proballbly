@@ -1,0 +1,112 @@
+@supports(display: grid){
+
+    .main-page-grid{
+    display: grid;
+    grid-gap: 1.5vw;
+    min-height: 100vh;
+    padding: 1.5vw;
+}
+
+    .main-page-grid{
+        grid-template-columns: repeat(5,1fr);
+        /* grid-template-rows: 50vh 30vh repeat(6, minmax(10vh, 1fr)); */
+        
+        
+    }
+
+    
+
+}
+
+.competition-box{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  
+}
+
+.diamond {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid rgb(3, 131, 3);
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    background-image: linear-gradient(to top left, rgb(0, 219, 29) 0%, rgb(3, 131, 3) 100%);
+    text-align: center;
+    transform-origin: center;
+    transform: rotateZ(45deg);
+    transition: box-shadow 250ms, transform 250ms;
+  }
+  
+
+  .diamond span {
+    color: #ffffff;
+    font-weight: normal;
+    transform: rotateZ(-45deg)
+  }
+  
+  
+.main-page-grid .competition-item:hover .diamond,
+.main-page-grid .competition-item:focus .diamond {
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  transform:  rotateZ(45deg) scale(1.2);
+}
+
+
+.competition-tip {
+    position: absolute;
+    z-index: 1;
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    background: #302f2f;
+    opacity: 0;
+    color: #fafafa;
+    font-size: 0.875rem;
+    transition: opacity 500ms, transform 500ms;
+  }
+  
+  .competition-tip:before {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: calc(50% - 10px);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #29343d;
+  }
+
+  
+.main-page-grid .competition-item:hover  .competition-tip,
+.main-page-grid .competition-item:focus  .competition-tip{
+  opacity: 1;
+  transform: translateY(70px);
+}
+
+.main-page-grid .competition-item {
+  position: relative;
+  padding: 1vw;
+  background-position:  left bottom;
+  background-size: 150% 100%;
+  transition: background 500ms, outline 500ms;
+  background-position: top left;
+  outline: transparent;
+}
+
+.main-page-grid .competition-item:hover,
+.main-page-grid .competition-item:focus {
+  background-position: top right;
+}
+
+.main-page-grid .competition-item:focus {
+  outline: 2px solid #3eabfa;
+}
+

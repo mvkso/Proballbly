@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Team from "./Team"
+import MainPage from "./components/MainPage";
 import Header from "./components/Header"
 import Nav from "./components/Navigation"
 import BplStandings from "./components/BplStandings"
@@ -18,8 +18,11 @@ function App(){
           <div className="App">     
             <Header/>
             <Nav/>  
-          <div class="base-container">
+          <div className="base-container">
           <Switch>
+            <Route exact path="/">
+                <MainPage/>
+            </Route>
             <Route exact path="/bpl">
               <BplStandings/>
             </Route>
