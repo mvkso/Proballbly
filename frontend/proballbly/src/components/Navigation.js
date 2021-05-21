@@ -10,7 +10,8 @@ const Nav = () => {
               <Link to="/bpl">Premier League</Link>
               <Link to="laliga">La Liga</Link>
               <Link to="bundesliga">Bundesliga</Link>
-              <Link to="ligue1" style={{marginRight: "0px"}}>Ligue 1</Link>
+              <Link to="ligue1">Ligue 1</Link>
+              <Link to="allteams" style={{marginRight: "0px"}}>All teams</Link>
           </div>
       </nav>
   )

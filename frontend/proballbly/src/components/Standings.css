@@ -34,6 +34,8 @@ th{
 	color:white;
 	margin: 30px;
 	display: block;
+	letter-spacing: 0.2em;
+    line-height: 1;
 }
 
 .wpos{

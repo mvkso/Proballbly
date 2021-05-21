@@ -1,15 +1,35 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { useHistory, useParams } from "react-router";
+import { NavLink } from "react-router-dom";
+import Select from "./Select";
 import "./Standings.css";
 
 
-const Standings = (data) => {
+const Standings = () => {
+    const history = useHistory();
+    const {id} = useParams();
+    const [data, setData] = useState([]);
+
+    function handleClick(){
+        history.push('/allteams');
+    }
+
+    useEffect(() => {
+        fetch(`http://localhost:8080/competitions/${id}/standings`)
+        .then((res) => res.json())
+        .then((data)=>setData(data))
+        .then(console.log(data))
+    },[]);
+
+
 
 
     return(
         <div className="ptable">
-              <h1 className="headin">STANDINGS</h1>
                 {data.map((standing) =>{
                   return standing.type === "TOTAL"?
+                  <div className="standing-div"> 
+                      <h1>STANDING</h1>
                   <table>
                   <tr className="col">
                       <th>#</th>
@@ -23,7 +43,7 @@ const Standings = (data) => {
                   </tr>
                    {standing.table.map((e) =>{
                           return(
-                            <tr className="wpos" >
+                            <tr className="wpos" onClick={() => handleClick()} >
                             <td>{e.position}</td>
                             <td><img className="teamLogo" src={e.team.crestUrl}></img>  {e.team.name}</td>
                             <td>{e.playedGames}</td>
@@ -37,13 +57,15 @@ const Standings = (data) => {
                           );
                       })} 
                 </table>
-                    :<h1>LOADING DATA</h1>;
+                </div>
+                    :null;
         
                 
                 
 
             })}
-             
+            
+            <Select data={data}/>
             </div>
     );
 

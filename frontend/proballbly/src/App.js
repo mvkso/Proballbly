@@ -9,10 +9,9 @@ import "./App.css"
 import LaLigaStandings from './components/LaLigaStandings';
 import BundesligaStandings from './components/BundesligaStandings';
 import Ligue1Standings from './components/Ligue1Standings';
+import Standings from "./components/Standings";
 
-function App(){
-
-  
+function App(){  
     return (
       <BrowserRouter>
           <div className="App">     
@@ -35,6 +34,7 @@ function App(){
             <Route exact path="/ligue1">
               <Ligue1Standings/>
             </Route>
+            <Route exact path='/standings/:id' component={Standings}/>
           </Switch>
           </div>
       </div>
