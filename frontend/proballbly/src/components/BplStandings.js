@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "./Standings.css"
+import Select from "./Select";
 class BplStandings extends Component{
 
     state = 
@@ -56,7 +57,7 @@ class BplStandings extends Component{
                 
 
             })}
-             
+             <Select data={this.state.data}/>
             </div>
         );
     }

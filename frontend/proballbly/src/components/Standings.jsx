@@ -18,7 +18,7 @@ const Standings = () => {
         fetch(`http://localhost:8080/competitions/${id}/standings`)
         .then((res) => res.json())
         .then((data)=>setData(data))
-        .then(console.log(data))
+        
     },[]);
 
 
@@ -29,7 +29,6 @@ const Standings = () => {
                 {data.map((standing) =>{
                   return standing.type === "TOTAL"?
                   <div className="standing-div"> 
-                      <h1>STANDING</h1>
                   <table>
                   <tr className="col">
                       <th>#</th>

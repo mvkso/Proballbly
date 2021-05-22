@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "./Standings.css"
+import Select from "./Select";
 class BundesligaStandings extends Component{
 
     state = 
@@ -57,7 +58,7 @@ class BundesligaStandings extends Component{
                 
 
             })}
-             
+              <Select data={this.state.data}/>
             </div>
         );
     }
