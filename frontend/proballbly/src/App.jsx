@@ -12,6 +12,9 @@ import Ligue1Standings from './components/Ligue1Standings';
 import Standings from "./components/Standings";
 
 function App(){  
+
+    
+
     return (
       <BrowserRouter>
           <div className="App">     

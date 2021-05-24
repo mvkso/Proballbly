@@ -1,7 +1,11 @@
 package com.proballbly.ProballblyApp.Controllers;
 
+import com.proballbly.ProballblyApp.Entities.Role;
+import com.proballbly.ProballblyApp.Entities.Roles;
 import com.proballbly.ProballblyApp.Entities.User;
 import com.proballbly.ProballblyApp.Entities.UserDetails;
+import com.proballbly.ProballblyApp.Repositories.RoleRepository;
+import com.proballbly.ProballblyApp.Repositories.UserDetailsRepository;
 import com.proballbly.ProballblyApp.Repositories.UserRepository;
 import com.sun.istack.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.sql.Date;
+import java.util.*;
+import java.util.Set;
 
 @CrossOrigin
 @RestController
@@ -19,10 +23,20 @@ import java.util.Optional;
 public class UserController {
 
     private final UserRepository userRepository;
+    private final UserDetailsRepository userDetailsRepository;
+    private final RoleRepository roleRepository;
+
+    public void addUsersAndDetails(){
+
+
+
+    }
 
     @Autowired
-    public UserController(UserRepository userRepository) {
+    public UserController(UserRepository userRepository, UserDetailsRepository userDetailsRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;
+        this.userDetailsRepository = userDetailsRepository;
+        this.roleRepository = roleRepository;
     }
 
     @GetMapping("/")
@@ -50,6 +64,30 @@ public class UserController {
             return new ResponseEntity<>("User edited successfully", HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping(path = "/", consumes = "application/json")
+    public void addUser(@RequestBody User user){
+        this.userRepository.save(user);
+    }
+
+    @PostMapping(path = "/details", consumes = "application/json")
+    public void addUserDetails(@RequestBody User user){
+        this.userRepository.save(user);
+    }
+
+    @GetMapping("/details")
+    public List<UserDetails> getUserDetails(){
+        List<UserDetails> users = new ArrayList<>();
+        userDetailsRepository.findAll().forEach(users::add);
+        return users;
+    }
+
+    @GetMapping("/roles")
+    public List<Role> getRoles(){
+        List<Role> roles = new ArrayList<>();
+        roleRepository.findAll().forEach(roles::add);
+        return roles;
     }
 
 }
