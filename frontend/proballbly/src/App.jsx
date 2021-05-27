@@ -10,10 +10,18 @@ import LaLigaStandings from './components/LaLigaStandings';
 import BundesligaStandings from './components/BundesligaStandings';
 import Ligue1Standings from './components/Ligue1Standings';
 import Standings from "./components/Standings";
+import Signup from "./components/Signup";
+import Signin from "./components/Signin";
+import Authentication from "./scripts/authentication";
+import {useEffect, useState} from "react";
 
 function App(){  
 
-    
+  const [loggedUser, setLoggedUser] = useState(null);
+
+  useEffect(() => {
+      setLoggedUser(Authentication.getCurrentUser());
+  }, []);
 
     return (
       <BrowserRouter>
@@ -38,6 +46,10 @@ function App(){
               <Ligue1Standings/>
             </Route>
             <Route exact path='/standings/:id' component={Standings}/>
+            <Route exact path='/login'>
+              <Signup/>
+            </Route>
+              
           </Switch>
           </div>
       </div>

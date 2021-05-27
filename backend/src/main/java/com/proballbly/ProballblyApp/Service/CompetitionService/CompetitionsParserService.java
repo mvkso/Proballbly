@@ -20,7 +20,6 @@ public class CompetitionsParserService {
     public List<Competition> toCompetitions(String jsonString) {
         JsonElement element = jsonParser.parse(jsonString);
         JsonElement competitionsJson = ((JsonObject) element).get("competitions");
-        System.out.println(competitionsJson);
         if (competitionsJson.isJsonArray()) {
             return toCompetitions(competitionsJson.getAsJsonArray());
         }

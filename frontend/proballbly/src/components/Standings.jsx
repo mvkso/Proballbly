@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useHistory, useParams } from "react-router";
 import { NavLink } from "react-router-dom";
 import Select from "./Select";
-import "./Standings.css";
+import "./css/Standings.css";
 
 
 const Standings = () => {
