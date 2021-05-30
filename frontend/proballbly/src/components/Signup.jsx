@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import Authentication from "../scripts/authentication";
 import "./css/Signup.css"
 
-const Signup = () => {
+const Signup = (props) => {
     const togglePanel = () => {
         history.push("/");
       };
@@ -65,7 +65,8 @@ const Signup = () => {
         (response) => {
           setMessage(response.data.message);
           setSuccessful(true);
-          history.push("/");
+          alert("Udana rejestracja. Przeniesienie na stronę logowania");
+          history.push("/login");
           window.location.reload();
         },
         (error) => {
@@ -75,7 +76,8 @@ const Signup = () => {
               error.response.data.message) ||
             error.message ||
             error.toString();
-
+            alert("Błąd z rejestracją. Powrót na stronę glówną");
+            history.push('/');
           setMessage(resMessage);
           setSuccessful(false);
         }
@@ -86,6 +88,8 @@ const Signup = () => {
       e.preventDefault();
         Authentication.login(username, password).then(
           () => {
+            props.setLoggedUser(Authentication.getCurrentUser());
+            alert("Udane logowanie. Przeniesienie na stronę głowna");
             history.push("/");
             window.location.reload();
           },
@@ -96,6 +100,9 @@ const Signup = () => {
                 error.response.data.message) ||
               error.message ||
               error.toString();
+              alert("Błąd logowania");
+              setMessage(resMessage);
+              setSuccessful(false);
           }
         );
     };

@@ -26,28 +26,29 @@ function App(){
     return (
       <BrowserRouter>
           <div className="App">     
-            <Header/>
-            <Nav/>  
+          <Header loggedUser={loggedUser} setLoggedUser={setLoggedUser}/>
+            <Nav loggedUser={loggedUser}/>  
           <div className="base-container">
           <Switch>
             <Route exact path="/">
-                <MainPage/>
+                <MainPage loggedUser={loggedUser}/>
             </Route>
             <Route exact path="/bpl">
-              <BplStandings/>
+              <BplStandings loggedUser={loggedUser}/>
             </Route>
             <Route exact path="/laliga">
-              <LaLigaStandings/>
+              <LaLigaStandings loggedUser={loggedUser}/>
             </Route>
             <Route exact path="/bundesliga">
-              <BundesligaStandings/>
+              <BundesligaStandings loggedUser={loggedUser}/>
             </Route>
             <Route exact path="/ligue1">
-              <Ligue1Standings/>
+              <Ligue1Standings loggedUser={loggedUser}/>
             </Route>
-            <Route exact path='/standings/:id' component={Standings}/>
-            <Route exact path='/login'>
-              <Signup/>
+            <Route exact path='/standings/:id' component={Standings} loggedUser={loggedUser}/>
+            <Route exact path='/login'
+            render={(props) => <Signup {...props} setLoggedUser={setLoggedUser}/>}
+            >
             </Route>
               
           </Switch>

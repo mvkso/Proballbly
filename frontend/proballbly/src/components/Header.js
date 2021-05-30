@@ -7,9 +7,10 @@ import authentication from "../scripts/authentication";
 const Header = ({loggedUser, setLoggedUser}) => {
      
       const history = useHistory();
+    
 
       const goToUserProfilePage = () => {
-            history.push('/user-profile/user-details');
+            history.push('/');
         }
     
 
@@ -22,9 +23,10 @@ const Header = ({loggedUser, setLoggedUser}) => {
             }
             { loggedUser &&
             <div className="loggedPanel">
+                <div className="text-panel">Hi, {loggedUser.username.toUpperCase()}!</div>
                     <img src="/account.png" alt="account icon" onClick={goToUserProfilePage}/>
-                <div className="links-account">
-                    <Link  to="/"
+                <div className="logout-panel">
+                    <Link className="logout-link" to="/"
                            onClick={ () => {
                                authentication.logout();
                                setLoggedUser(null);

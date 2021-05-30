@@ -2,7 +2,9 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "./css/Navigation.css"
 
-const Nav = () => {
+const Nav = ({loggedUser}) => {
+
+    
   return (
       <nav className="navbar">
           <div className="links">
@@ -11,7 +13,8 @@ const Nav = () => {
               <Link to="laliga">La Liga</Link>
               <Link to="bundesliga">Bundesliga</Link>
               <Link to="ligue1">Ligue 1</Link>
-              <Link to="allteams" style={{marginRight: "0px"}}>All teams</Link>
+              <Link to="allteams" >All teams {}</Link>
+              {loggedUser.roles[0] === "ROLE_USER" && <Link to="adminpanel">Admin panel</Link>}
           </div>
       </nav>
   )
