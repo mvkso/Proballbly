@@ -13,8 +13,10 @@
     font-weight: bold;
     padding: 15px;
     
+    
 }
 .loggedPanel{
+    
     display: flex;
     font-size: 25px;
     flex-direction: row;
