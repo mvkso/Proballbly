@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./Standings.css"
+import "./css/Standings.css"
 import Select from "./Select";
 class BundesligaStandings extends Component{
 

@@ -10,31 +10,47 @@ import LaLigaStandings from './components/LaLigaStandings';
 import BundesligaStandings from './components/BundesligaStandings';
 import Ligue1Standings from './components/Ligue1Standings';
 import Standings from "./components/Standings";
+import Signup from "./components/Signup";
+import Signin from "./components/Signin";
+import Authentication from "./scripts/authentication";
+import {useEffect, useState} from "react";
 
 function App(){  
+
+  const [loggedUser, setLoggedUser] = useState(null);
+
+  useEffect(() => {
+      setLoggedUser(Authentication.getCurrentUser());
+  }, []);
+
     return (
       <BrowserRouter>
           <div className="App">     
-            <Header/>
-            <Nav/>  
+          <Header loggedUser={loggedUser} setLoggedUser={setLoggedUser}/>
+            <Nav loggedUser={loggedUser}/>  
           <div className="base-container">
           <Switch>
             <Route exact path="/">
-                <MainPage/>
+                <MainPage loggedUser={loggedUser}/>
             </Route>
             <Route exact path="/bpl">
-              <BplStandings/>
+              <BplStandings loggedUser={loggedUser}/>
             </Route>
             <Route exact path="/laliga">
-              <LaLigaStandings/>
+              <LaLigaStandings loggedUser={loggedUser}/>
             </Route>
             <Route exact path="/bundesliga">
-              <BundesligaStandings/>
+              <BundesligaStandings loggedUser={loggedUser}/>
             </Route>
             <Route exact path="/ligue1">
-              <Ligue1Standings/>
+              <Ligue1Standings loggedUser={loggedUser}/>
             </Route>
-            <Route exact path='/standings/:id' component={Standings}/>
+            <Route exact path='/standings/:id' component={Standings} loggedUser={loggedUser}/>
+            <Route exact path='/login'
+            render={(props) => <Signup {...props} setLoggedUser={setLoggedUser}/>}
+            >
+            </Route>
+              
           </Switch>
           </div>
       </div>

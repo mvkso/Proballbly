@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Route, Switch, NavLink, useHistory, Link} from "react-router-dom";
 import Standings from "./Standings";
-import "./MainPage.css"
+import "./css/MainPage.css"
 
 const MainPage = () => {
 

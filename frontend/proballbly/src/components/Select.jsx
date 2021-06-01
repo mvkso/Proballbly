@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useHistory, useParams } from "react-router";
 import { NavLink } from "react-router-dom";
-import "./Select.css"
+import "./css/Select.css"
 
 
 const Select = (data) => {
