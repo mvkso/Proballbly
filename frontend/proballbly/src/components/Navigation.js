@@ -14,7 +14,7 @@ const Nav = ({loggedUser}) => {
               <Link to="bundesliga">Bundesliga</Link>
               <Link to="ligue1">Ligue 1</Link>
               <Link to="allteams" >All teams {}</Link>
-              {/* {loggedUser.roles[0] === "ROLE_USER" && <Link to="adminpanel">Admin panel</Link>} */}
+              {loggedUser && loggedUser.roles[0] === "ROLE_USER" && <Link to="adminpanel">Admin panel</Link>}
           </div>
       </nav>
   )

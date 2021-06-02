@@ -11,7 +11,7 @@ import BundesligaStandings from './components/BundesligaStandings';
 import Ligue1Standings from './components/Ligue1Standings';
 import Standings from "./components/Standings";
 import Signup from "./components/Signup";
-import Signin from "./components/Signin";
+import AllTeams from "./components/AllTeams";
 import Authentication from "./scripts/authentication";
 import {useEffect, useState} from "react";
 
@@ -49,6 +49,9 @@ function App(){
             <Route exact path='/login'
             render={(props) => <Signup {...props} setLoggedUser={setLoggedUser}/>}
             >
+            </Route>
+            <Route exact path='/allteams'>
+              <AllTeams/>
             </Route>
               
           </Switch>
