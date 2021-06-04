@@ -3,7 +3,7 @@ import { Route, Switch, NavLink, useHistory, Link} from "react-router-dom";
 import Standings from "./Standings";
 import "./css/MainPage.css"
 
-const MainPage = () => {
+const MainPage = ({loggedUser}) => {
 
     const history = useHistory();
     function handleClick(id){
@@ -19,11 +19,14 @@ const MainPage = () => {
     
 
     return(
+        
         <div className="body">
+            {loggedUser &&
             <header className="main-header">
                 <h1>WELCOME TO PROBALLBLY</h1>
                 <h2>CHOOSE YOUR LEAGUE</h2>
             </header>
+}
         <section className = "main-page-grid">
             {competitions.map((competition)=> 
             <NavLink to={'/standings/'+competition.id}>
@@ -38,9 +41,17 @@ const MainPage = () => {
                 </NavLink>
 
             )}
-
+            
         </section>
+        {
+            !loggedUser &&
+            <header className="main-header">
+                <h1>SIGN UP TO SEE OUR CONTENT</h1>
+                <h2>Cheers</h2>
+            </header>
+        }
         </div>
+            
 
     );
 

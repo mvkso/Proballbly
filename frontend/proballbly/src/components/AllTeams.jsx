@@ -33,79 +33,11 @@ const AllTeams = () => {
       };
 
 
-    const addTeams = () =>{
-        return axios.post(API_URL, {
-            name,
-            shortName,
-            website,
-            description,
-            city,
-            logo,
-            arena,
-        });
-    };
-
-    const handleAddTeam = () => {
-        addTeams.then(
-            (response) => {
-              setMessage(response.data.message);
-              setSuccessful(true);
-              alert("Success!");
-              history.push("/allteams");
-              window.location.reload();
-            },
-            (error) => {
-              const resMessage =
-                (error.response &&
-                  error.response.data &&
-                  error.response.data.message) ||
-                error.message ||
-                error.toString();
-                alert("Adding team error, let's go back to main page");
-                history.push('/');
-              setMessage(resMessage);
-              setSuccessful(false);
-            }
-          );
-    };
-
-    const onChangeName = (e) => {
-        const name = e.target.value;
-        setName(name);
-      };
-
-      const onChangeShortName = (e) => {
-        const shortName = e.target.value;
-        setShortName(shortName);
-      };
-
-      const onChangeWebsite = (e) => {
-        const website = e.target.value;
-        setWebsite(website);
-      };
-
-      const onChangeDescription = (e) => {
-        const description = e.target.value;
-        setDescription(description);
-      };
-
-      const onChangeCity = (e) => {
-        const city = e.target.value;
-        setCity(city);
-      };
-
-      const onChangeLogo= (e) => {
-        const logo = e.target.value;
-        setLogo(logo);
-      };
-
-      const onChangeArena = (e) => { 
-        const arena = e.target.value;
-        setArena(arena);
-      };
+    
 
       return(
           <section className="all-teams-section">
+            
             <div className="links">
               <Link to="/addform">Add own team</Link>
               </div>

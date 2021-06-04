@@ -12,6 +12,7 @@ import Ligue1Standings from './components/Ligue1Standings';
 import Standings from "./components/Standings";
 import Signup from "./components/Signup";
 import AllTeams from "./components/AllTeams";
+import AddTeam from "./components/addTeam";
 import Authentication from "./scripts/authentication";
 import {useEffect, useState} from "react";
 
@@ -52,6 +53,9 @@ function App(){
             </Route>
             <Route exact path='/allteams'>
               <AllTeams/>
+            </Route>
+            <Route exact path='/addform'>
+              <AddTeam/>
             </Route>
               
           </Switch>
