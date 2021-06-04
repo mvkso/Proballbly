@@ -1,5 +1,6 @@
-import "./css/AllTeams.css"
+import "./css/AllTeams.scss"
 import React, {useState, useRef, useEffect} from "react";
+import {Link} from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -7,8 +8,7 @@ import axios from "axios";
 const AllTeams = () => {
     const history = useHistory();
     const API_URL = "http://localhost:8080/api/teams/";
-    const [teamsToggle, setTeamsToggle] = useState(true);
-    const [formToggle, setFormToggle] = useState(false);
+    const [toggle, setToggle] = useState(true);
     const [teams, setTeams] = useState([]);
     const [name,setName] = useState("");
     const [shortName, setShortName] = useState("");
@@ -28,7 +28,8 @@ const AllTeams = () => {
     },[]);
 
     const toggleTeams = () => {
-        history.push("/allteams");
+        setToggle(!toggle)
+        //history.push("/allteams");
       };
 
 
@@ -105,9 +106,22 @@ const AllTeams = () => {
 
       return(
           <section className="all-teams-section">
-        <button type="toggleButton" onClick={toggleTeams} style={{color: "black"}}>Check teams or add a new one!</button>
-        {}
-
+            <div className="links">
+              <Link to="/addform">Add own team</Link>
+              </div>
+            
+            {teams.map((team) => {
+              return(
+                <div className="teamCard" key={team.id}>
+                  <input type="checkbox" id={team.id}/>
+                  
+                  <label for={team.id}><img className="teamLogo" src={team.logo}/>{team.name} from {team.city}</label>
+                  <div className="content" id={team.id}>
+                    <div>{team.description} <a href={team.website}>{team.website}</a></div>
+                  </div>
+                </div>
+              );
+            })}
         </section>
       );
 

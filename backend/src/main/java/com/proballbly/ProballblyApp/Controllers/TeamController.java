@@ -42,7 +42,7 @@ public class TeamController {
 
     @PostMapping(path = "/", consumes = "application/json")
     public void addTeam(@RequestBody Team team){
-        this.teamRepoService.save(team);
+        this.teamRepository.save(team);
     }
 
 
