@@ -23,7 +23,7 @@ const Header = ({loggedUser, setLoggedUser}) => {
             }
             { loggedUser &&
             <div className="loggedPanel">
-                <div className="text-panel">Hi, {loggedUser.username.toUpperCase()}!</div>
+                <div className="text-panel">Hi, {loggedUser && loggedUser.username.toUpperCase()}!</div>
                     <img src="/account.png" alt="account icon" onClick={goToUserProfilePage}/>
                 <div className="logout-panel">
                     <Link className="logout-link" to="/"

@@ -6,6 +6,12 @@
   line-height: 1;
 }
 
+.main-header input{
+  width: 300px;
+  border-radius: 2em;
+  
+}
+
 @supports(display: grid){
 
     .main-page-grid{
