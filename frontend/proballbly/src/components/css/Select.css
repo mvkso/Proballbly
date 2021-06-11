@@ -1,6 +1,5 @@
 .selectors{
   text-transform: uppercase;
-  max-width: 1300px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -9,7 +8,8 @@
   align-self: center;
   color: black;
   justify-content: center;
-  margin-left: 8em;
+  margin: 0;
+	padding: 0;
   
 }
 header{

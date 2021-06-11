@@ -9,7 +9,7 @@ const Select = (data) => {
     let competitions = data.data[0];
     const [team1, setTeam1] = useState(1);
     const [team2, setTeam2] = useState(1);
-    const [result, setResult] = useState("");
+    const [result, setResult] = useState(team1 + " " + team2);
 
     useEffect(() => console.log(competitions));
 
@@ -22,24 +22,31 @@ const Select = (data) => {
         let team2result = team2points/team2position;
         let allpoints = team1result+team2result;
         if(team1result>team2result){
-            setResult(competitions.table[team1x-1].team.name+" is going to win in "+ team1result/allpoints*100+ "%")
+            setResult(competitions.table[team1x-1].team.name+" is going to win in "+ team1result/allpoints*100+ "%");
         }else if(team1result<team2result){
-            setResult(competitions.table[team2y-1].team.name+" is going to win in "+ team2result/allpoints*100+ "%")
+            setResult(competitions.table[team2y-1].team.name+" is going to win in "+ team2result/allpoints*100+ "%");
         }else{
             setResult("There will be draw no cap");
         }
+        
              
     }
 
     function handlechange1(e){
         setTeam1(e.target.value);
-        algorithm(team1,team2);
+        setTeam1(e.target.value);
+        if(team1 !== team2){
+            algorithm(team1,team2);
+            }
 
     }
 
-    function handlechange2(e){
-        setTeam2(e.target.value);
-        algorithm(team1,team2);
+    function handlechange2(event){
+        setTeam2(event.target.value);
+        setTeam2(event.target.value);
+        if(team1 !== team2){
+            algorithm(team1,team2);
+            }
 
     }
 
@@ -77,7 +84,7 @@ const Select = (data) => {
            
             
            
-            <div className="algorithm">{result} "</div>
+            <div className="algorithm">{result}</div>
     </div>
     );
 

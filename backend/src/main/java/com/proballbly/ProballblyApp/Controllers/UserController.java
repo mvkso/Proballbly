@@ -90,4 +90,10 @@ public class UserController {
         return roles;
     }
 
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Long> deleteUser(@PathVariable Long id){
+        userRepository.deleteById(id);
+        return new ResponseEntity<>(id,HttpStatus.OK);
+    }
+
 }

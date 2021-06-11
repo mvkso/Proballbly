@@ -5,6 +5,9 @@
 	padding: 0;
 	color: white;
 }
+html{
+	scroll-behavior: smooth;
+}
 
 
 .ptable table{

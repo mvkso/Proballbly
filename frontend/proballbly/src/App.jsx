@@ -15,6 +15,7 @@ import AllTeams from "./components/AllTeams";
 import AddTeam from "./components/addTeam";
 import Authentication from "./scripts/authentication";
 import {useEffect, useState} from "react";
+import AdminPanel from './components/AdminPanel';
 
 function App(){  
 
@@ -57,9 +58,13 @@ function App(){
             <Route exact path='/addform'>
               <AddTeam/>
             </Route>
+            <Route exact path='/adminPanel'>
+              <AdminPanel/>
+            </Route>
               
           </Switch>
           </div>
+          <div className="information"></div>
       </div>
       </BrowserRouter>
     );

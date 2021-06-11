@@ -1,5 +1,4 @@
 .all-teams-section{
-    max-width: 1500px;
     overflow-x: hidden;
     overflow-y: auto;
     display: flex;
@@ -17,6 +16,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+   
 
     
 }
@@ -54,7 +54,7 @@
 
 .all-teams-section label {
         width: 100%;
-
+        
         float: left;
         background: #ffffff;
         outline: none;

@@ -26,6 +26,7 @@ const Standings = () => {
 
     return(
         <div className="ptable">
+            <h1 className="headin"><a href="#calculate">Standings</a></h1>
                 {data.map((standing) =>{
                   return standing.type === "TOTAL"?
                   <div className="standing-div"> 
@@ -64,7 +65,8 @@ const Standings = () => {
 
             })}
             
-            <Select data={data}/>
+            <div className="href" id="calculate"></div>
+            <Select data={data} />
             </div>
     );
 
