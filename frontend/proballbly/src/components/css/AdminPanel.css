@@ -1,0 +1,28 @@
+.selects{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+.minimal{
+    width: 300px;
+}
+
+.submitDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    
+}
+
+.submitInput{
+    margin-top: 5px;
+}
+
+.adminForm{
+    padding-top: 50px;
+}

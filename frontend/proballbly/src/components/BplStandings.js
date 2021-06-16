@@ -21,7 +21,7 @@ class BplStandings extends Component{
     render(){
     return(
             <div className="ptable">
-              <h1 className="headin">BPL STANDINGS</h1>
+              <h1 className="headin"><a href="#calculate">BPL Standings</a></h1>
                 {this.state.data.map((standing) =>{
                   return standing.type === "TOTAL"?
                   <table>
@@ -57,6 +57,7 @@ class BplStandings extends Component{
                 
 
             })}
+            <div className="href" id="calculate"></div>
              <Select data={this.state.data}/>
             </div>
         );

@@ -102,3 +102,6 @@ build/
 backend/bazaDanych1.mv.db
 backend/src/main/resources/application.properties
 backend/src/main/java/Service/TokenProviderServiceImpl.java
+backend/src/main/java/com/proballbly/ProballblyApp/Config/SocialConfig.java
+backend/src/main/java/com/proballbly/ProballblyApp/Config/SocialConfig.java
+backend/src/main/resources/application.properties

@@ -6,6 +6,12 @@
   line-height: 1;
 }
 
+.main-header input{
+  width: 300px;
+  border-radius: 2em;
+  
+}
+
 @supports(display: grid){
 
     .main-page-grid{
@@ -28,10 +34,15 @@
 
 
 
+
+
 .main-header {
     margin: 10vh 1.5vw;
     text-align: center;
     color: #cedfe9;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
   
   .main-header h1,
@@ -146,4 +157,27 @@
 .main-page-grid .competition-item:focus {
   outline: 2px solid #3eabfa;
 }
+
+@media only screen and (max-device-width: 420px){
+  .body{
+    width: 100vw;
+  }
+
+  .main-page-grid{
+    display: grid;
+    grid-gap: 2vw 2vw;
+    min-height: 150vh;
+    padding: 0.5vw;
+    row-gap: 2.5em;
+}
+
+    .main-page-grid{
+        grid-template-columns: repeat(2,1fr);
+        
+        
+    }
+
+
+}
+
 

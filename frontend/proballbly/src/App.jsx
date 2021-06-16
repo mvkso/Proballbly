@@ -11,9 +11,12 @@ import BundesligaStandings from './components/BundesligaStandings';
 import Ligue1Standings from './components/Ligue1Standings';
 import Standings from "./components/Standings";
 import Signup from "./components/Signup";
-import Signin from "./components/Signin";
+import AllTeams from "./components/AllTeams";
+import AddTeam from "./components/addTeam";
 import Authentication from "./scripts/authentication";
 import {useEffect, useState} from "react";
+import AdminPanel from './components/AdminPanel';
+import Footer from './components/Footer';
 
 function App(){  
 
@@ -50,11 +53,27 @@ function App(){
             render={(props) => <Signup {...props} setLoggedUser={setLoggedUser}/>}
             >
             </Route>
+            <Route exact path='/allteams'>
+              <AllTeams/>
+            </Route>
+            <Route exact path='/addform'>
+              <AddTeam/>
+            </Route>
+            <Route exact path='/adminPanel'>
+              <AdminPanel/>
+            </Route>
               
           </Switch>
+         
           </div>
+          
+          <Footer/>
       </div>
+      
+        
+      
       </BrowserRouter>
+      
     );
 
 

@@ -1,0 +1,38 @@
+.pagination{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    list-style-type: none;
+    
+    font-size: 30px;
+    height: 30px;
+    margin-top: 20px;
+    
+}
+
+.page-item{
+    width: 30px;
+    height: 30px;
+    
+    cursor: pointer;
+    border: 5px white;
+    padding-right: 15px;
+    
+}
+
+
+
+.page-link{
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    background-color: rgb(24, 119, 1);
+    border: 5px white;
+}
+
+.page-link:hover{
+    color: red;
+    border: 5px white;
+    
+}
+

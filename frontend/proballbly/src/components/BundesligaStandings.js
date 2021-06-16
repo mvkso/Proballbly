@@ -21,7 +21,7 @@ class BundesligaStandings extends Component{
     render(){
     return(
             <div className="ptable">
-              <h1 className="headin">Bundesliga STANDINGS</h1>
+              <h1 className="headin"><a href="#calculate"> Bundesliga Standings</a></h1>
               
                 {this.state.data.map((standing) =>{
                   return standing.type === "TOTAL"?
@@ -58,6 +58,7 @@ class BundesligaStandings extends Component{
                 
 
             })}
+            <div className="href" id="calculate"></div>
               <Select data={this.state.data}/>
             </div>
         );

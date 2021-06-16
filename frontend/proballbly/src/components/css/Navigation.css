@@ -6,7 +6,7 @@
     margin-left: 0.25em;
 }
 
-.navbar .links {
+.navbar .links{
     display: flex;
     margin: 0 auto;
     max-width: 1300px;
@@ -15,7 +15,7 @@
 .navbar a {
     display: inline-block;
     text-align: center;
-    border: 1px solid;
+    /* border: 1px solid; */
     border-radius: 25px;
     text-decoration: none;
     width: 120px;
@@ -25,7 +25,81 @@
 }
 
 .navbar a:hover {
-    border: 2px solid;
+    /* border: 2px solid; */
     transform: scale(1.1);
 }
 
+.navbar a:before, div.borderYtoX a:after
+{
+    position: absolute;
+    opacity: 1;
+    height: auto;
+    width: 2px;
+    content: '';
+    background: #FFF;
+    transition: all 0.3s;
+}
+
+.navbar a:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+
+
+.navbar a:hover:before, .navbar a:hover:after
+{
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+}
+
+@media only screen and (max-device-width: 420px){
+
+    /* .header{
+        width: 92vw;
+        height: 10vh;
+    }
+
+    .links{
+        width: 100vw;
+        flex-direction: column;
+    }
+
+    .text-panel{
+        display: none;
+    }
+
+    .loggedPanel{
+        display: none;
+    }
+
+    .hamburger-react{
+        display: block;
+        margin-left: auto;
+        z-index: 9999;
+    }
+
+    .navbar{
+        width: 90vw;
+    }
+
+    .navbar-close{
+
+    }
+
+    .link-close{
+        display: none;
+    } */
+
+    .navbar{
+        display: none;
+    }
+    .navbar a{
+        display: none;
+    }
+    .navbar .links {
+        display: none;
+    }
+}
