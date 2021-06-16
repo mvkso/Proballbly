@@ -52,7 +52,7 @@ const Header = ({loggedUser, setLoggedUser}) => {
               <Link to="bundesliga">Bundesliga</Link>
               <Link to="ligue1">Ligue 1</Link>
               <Link to="allteams" >All teams</Link>
-              {loggedUser && loggedUser.roles[0] === "ROLE_USER" && <Link to="adminpanel">Admin panel</Link>}
+              {loggedUser && loggedUser.roles[0] === "ROLE_ADMIN" && <Link to="adminpanel">Admin panel</Link>}
               <Link to="/" onClick={ () => {
                                authentication.logout();
                                setLoggedUser(null);
