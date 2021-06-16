@@ -12,9 +12,7 @@ const Header = ({loggedUser, setLoggedUser}) => {
       const [isOpen, setOpen] = useState(false)
 
       
-      const goToUserProfilePage = () => {
-            history.push('/');
-        }
+      
     
 
         console.log(isOpen)
@@ -29,7 +27,7 @@ const Header = ({loggedUser, setLoggedUser}) => {
             { loggedUser &&
             <div className="loggedPanel">
                 <div className="text-panel">Hi, {loggedUser && loggedUser.username.toUpperCase()}!</div>
-                    <img src="/account.png" alt="account icon" onClick={goToUserProfilePage}/>
+                   
                 <div className="logout-panel">
                     <Link className="logout-link" to="/"
                            onClick={ () => {
