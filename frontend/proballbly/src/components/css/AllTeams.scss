@@ -189,3 +189,11 @@ a.all-teams-section input:checked + label:after {
 		min-height: auto;
 	}
 }
+
+@media only screen and (max-device-width: 420px){
+	.teamCard {
+		width: 100%;
+		padding: 5vmin !important;
+		min-height: auto;
+	}
+}

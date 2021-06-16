@@ -68,3 +68,6 @@ table .col{
 .wpos:hover td{
 	color: #000000;
 }
+@media only screen and (max-device-width: 420px){
+	
+}

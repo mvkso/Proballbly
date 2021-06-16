@@ -129,10 +129,16 @@
         font-size: 5px;
         align-items: center;
         text-align: center;
+        background: #141414;
+        background: rgb(3, 114, 3);
+    width: auto;
+    height: 60vh;
+    margin-top: 50px;
+    z-index: 9999;
     }
 
     .header{
-        width: 100%;
+        width: auto;
         height: 50px;
         font-size: 40px;
         padding: 0;
@@ -155,19 +161,28 @@
     }
 
     .hamburger-text-panel{
+        color:black;
+        font-weight: bolder;
         font-size: 20px;
+        margin-top: 10px;
     }
 
     .links{
+        text-decoration-color: black;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
         font-size: 20px;
         display: flex;
         flex-direction: column;
         width: 100vw;
         align-items: center;
         text-align: center;
+        
     }
 
     .links a{
+        
+        color: rgb(255, 255, 255);
         padding-top: 1em;
     }
 
@@ -176,6 +191,10 @@
     }
 
     .links-account{
+        display: none;
+    }
+
+    .header .loggedPanel img{
         display: none;
     }
 

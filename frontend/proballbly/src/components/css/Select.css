@@ -104,3 +104,9 @@ input{
   height: 100px;
   font-size: 30px;
 }
+
+@media only screen and (max-device-width: 420px){
+  .algorithm{
+    width: auto;
+  }
+}
