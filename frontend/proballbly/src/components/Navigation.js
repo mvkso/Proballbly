@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import "./css/Navigation.css"
-import Hamburger from 'hamburger-react'
+
 
 const Nav = ({loggedUser}) => {
 

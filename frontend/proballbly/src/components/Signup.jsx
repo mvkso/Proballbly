@@ -4,9 +4,7 @@ import Authentication from "../scripts/authentication";
 import "./css/Signup.css"
 
 const Signup = (props) => {
-    const togglePanel = () => {
-        history.push("/");
-      };
+    
 
     const form = useRef();
     const checkBtn = useRef();

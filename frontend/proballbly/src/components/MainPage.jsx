@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Route, Switch, NavLink, useHistory, Link} from "react-router-dom";
-import Standings from "./Standings";
+import {NavLink, useHistory} from "react-router-dom";
 import "./css/MainPage.css";
 import Pagination from "./Pagination";
 
@@ -33,7 +32,7 @@ const MainPage = ({loggedUser}) => {
     const currentCompetitions = competitions.slice(indexOdFirstCompetition,indexOfLastCompetition);
 
     // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     
     const competitionItems = currentCompetitions.filter((competition) => {
@@ -86,19 +85,6 @@ const MainPage = ({loggedUser}) => {
         
         <section className = "main-page-grid">
             
-            {/* {competitions.map((competition)=> 
-            <NavLink to={'/standings/'+competition.id}>
-                <div className="competition-item" key={competition.id}>
-                    <div className="competition-box">
-                        <div className="diamond">
-                            <span>{competition.name}</span>
-                            <div className="competition-tip">{competition.area.name}</div>
-                        </div>
-                    </div>
-                </div>
-                </NavLink>
-
-            )} */}
             {competitionItems}
             
       
