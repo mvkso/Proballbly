@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Route, Switch, NavLink, useHistory, Link} from "react-router-dom";
 import Standings from "./Standings";
 import "./css/MainPage.css";
+import Pagination from "./Pagination";
 
 
 const MainPage = ({loggedUser}) => {
@@ -12,6 +13,8 @@ const MainPage = ({loggedUser}) => {
     }
     const [competitions, setCompetitions] = useState([]);
     const [search, setSearch] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [competitionsPerPage] = useState(20);
 
     useEffect(() => {
         fetch("http://localhost:8080/competitions")
@@ -23,8 +26,17 @@ const MainPage = ({loggedUser}) => {
         let keyword = event.target.value;
         setSearch(keyword)
       }
+
+      //Get current competitions
+    const indexOfLastCompetition = currentPage * competitionsPerPage;
+    const indexOdFirstCompetition = indexOfLastCompetition - competitionsPerPage;
+    const currentCompetitions = competitions.slice(indexOdFirstCompetition,indexOfLastCompetition);
+
+    // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
     
-    const competitionItems = competitions.filter((competition) => {
+    const competitionItems = currentCompetitions.filter((competition) => {
         if(search == null)
             return competition
             else if(competition.name.toString().toLowerCase().includes(search.toString().toLowerCase() 
@@ -48,14 +60,19 @@ const MainPage = ({loggedUser}) => {
 
     )
 
+    
+
     return(
         
         <div className="body">
             {loggedUser &&
             <header className="main-header">
+                
                 <h1>WELCOME TO PROBALLBLY</h1>
                 <h2>CHOOSE YOUR LEAGUE</h2>
+                <Pagination competitionsPerPage={competitionsPerPage} totalCompetitions={competitions.length} paginate={paginate}/>
                 <input type="text" placeholder="Find your league" onChange={(e)=>searchSpace(e)}></input>
+                
             </header>
 }         
 {
@@ -84,8 +101,11 @@ const MainPage = ({loggedUser}) => {
             )} */}
             {competitionItems}
             
+      
         </section>
+        
 }
+        
         
         </div>
             

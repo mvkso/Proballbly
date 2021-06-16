@@ -60,6 +60,8 @@ const AllTeams = () => {
 
     )
 
+    
+
       return(
           <section className="all-teams-section">
             

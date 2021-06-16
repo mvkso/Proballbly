@@ -16,7 +16,9 @@ header{
   font-size: 30px;
   padding: 30px;
 }
-
+input{
+  cursor: pointer;
+}
 select {
 
   /* styling */

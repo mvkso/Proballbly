@@ -16,6 +16,7 @@ import AddTeam from "./components/addTeam";
 import Authentication from "./scripts/authentication";
 import {useEffect, useState} from "react";
 import AdminPanel from './components/AdminPanel';
+import Footer from './components/Footer';
 
 function App(){  
 
@@ -63,10 +64,16 @@ function App(){
             </Route>
               
           </Switch>
+         
           </div>
-          <div className="information"></div>
+          
+          <Footer/>
       </div>
+      
+        
+      
       </BrowserRouter>
+      
     );
 
 

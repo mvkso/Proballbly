@@ -5,6 +5,8 @@ import com.proballbly.ProballblyApp.Entities.User;
 import com.proballbly.ProballblyApp.Repositories.TeamRepository;
 import com.proballbly.ProballblyApp.Service.TeamService.TeamRepoService;
 import com.sun.istack.Nullable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ public class TeamController {
     @GetMapping("/")
     public List<Team> getTeams(){
         List<Team> teams = new ArrayList<>();
-        teamRepository.findAll().forEach(teams::add);
+        teamRepoService.findAll().forEach(teams::add);
         return teams;
     }
 
@@ -43,6 +45,12 @@ public class TeamController {
     @PostMapping(path = "/", consumes = "application/json")
     public void addTeam(@RequestBody Team team){
         this.teamRepository.save(team);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Long> deleteTeam(@PathVariable Long id){
+        teamRepository.deleteById(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
     }
 
 

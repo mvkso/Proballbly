@@ -28,27 +28,37 @@ const AdminPanel = () => {
         
     },[]);
 
-
-
     const deleteUser = (id) => {
-        console.log("delete user");
-        axios.delete(`http://localhost:8080/api/users/${id}`)
-        .catch(res =>{
+        return axios.delete(`http://localhost:8080/api/users/${id}`)
+    .then(
+        alert("Deleting user completed").catch(res =>{
             console.error(res);
             alert("Deleting user failed");
-            history.push('/');
+            history.push('/adminpanel');
+        }).catch(res =>{
+            console.error(res);
+            alert("Deleting user failed");
+            history.push('/adminpanel');
         })
-
+    );
     }
+    
 
     const deleteTeam = (id) => {
         console.log("delete team "+id);
-        axios.delete(`http://localhost:8080/api/teams/${id}`)
+        return axios.delete(`http://localhost:8080/api/teams/${id}`)
+        .then(
+            alert("Deleting user completed").catch(res =>{
+                console.error(res);
+                alert("Deleting user failed");
+                history.push('/adminpanel');
+            })
         .catch(res =>{
             console.error(res);
             alert("Deleting team failed");
             history.push('/');
         })
+        );
 
     }
 
